@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0B0B0B;
+  --color-secondary: #1A1A1A;
+  --color-accent: #C6A95D;
+}
+
+body {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.bg-radial-gradient {
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9));
+}
