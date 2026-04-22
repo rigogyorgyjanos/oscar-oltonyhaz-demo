@@ -78,22 +78,20 @@ export default function Home() {
                 {/* GLOW BACKGROUND (ÁTFOLYIK MINDENEN) */}
                 <div className="absolute inset-0 pointer-events-none z-10">
 
-                    <motion.div
+                    <div
                         className="absolute w-125 h-125 bg-accent blur-[160px] opacity-20 rounded-full -top-37.5 -left-37.5"
-                        animate={{ y: [0, 20, 0] }}
-                        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+                     
+                     
                     />
 
-                    <motion.div
+                    <div
                         className="absolute w-100 h-100 bg-accent blur-[180px] opacity-10 rounded-full top-[30%] -right-37.5"
-                        animate={{ y: [0, -15, 0] }}
-                        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+                     
                     />
 
-                    <motion.div
+                    <div
                         className=" absolute w-150 h-150 bg-accent blur-[200px] opacity-10 rounded-full -bottom-50 left-[20%]"
-                        animate={{ y: [0, 25, 0] }}
-                        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+                     
                     />
                 </div>
 
