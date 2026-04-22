@@ -10,12 +10,12 @@ export default function Home() {
                 {/* BACKGROUND IMAGE */}
                 <motion.img
                     src="/hero.jpg"
-                    className="absolute w-full h-full object-cover object-top"
+                    className="absolute w-full h-full object-cover object-top will-change-transform"
                     initial={{ scale: 1 }}
                     animate={{ scale: 1.1 }}
                     transition={{
                         duration: 0.9,
-                        ease: "easeInOut",
+                        ease: "easeOut",
                     }}
                 />
 
@@ -78,21 +78,11 @@ export default function Home() {
                 {/* GLOW BACKGROUND (ÁTFOLYIK MINDENEN) */}
                 <div className="absolute inset-0 pointer-events-none z-10">
 
-                    <div
-                        className="absolute w-125 h-125 bg-accent blur-[160px] opacity-20 rounded-full -top-37.5 -left-37.5"
-                     
-                     
-                    />
-
-                    <div
-                        className="absolute w-100 h-100 bg-accent blur-[180px] opacity-10 rounded-full top-[30%] -right-37.5"
-                     
-                    />
-
-                    <div
-                        className=" absolute w-150 h-150 bg-accent blur-[200px] opacity-10 rounded-full -bottom-50 left-[20%]"
-                     
-                    />
+                    <div className="absolute inset-0 pointer-events-none z-10 hidden md:block">
+                        <div className="absolute w-125 h-125 bg-linear-to-r from-accent/20 to-transparent opacity-20 rounded-full -top-37.5 -left-37.5" />
+                        <div className="absolute w-100 h-100 bg-linear-to-r from-accent/20 to-transparent opacity-10 rounded-full top-[30%] -right-37.5" />
+                        <div className="absolute w-150 h-150 bg-linear-to-r from-accent/20 to-transparent opacity-10 rounded-full -bottom-50 left-[20%]" />
+                    </div>
                 </div>
 
                 {/* INFO */}
@@ -137,7 +127,7 @@ export default function Home() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: i * 0.1 }}
                                     viewport={{ once: true }}
-                                    className="bg-black/30 border border-white/10 p-8 rounded-2xl hover:border-accent transition"
+                                    className="bg-black/30 border border-white/10 p-8 rounded-2xl md:hover:border-accent transition"
                                 >
                                     <h3 className="text-xl font-medium mb-3">{item.title}</h3>
                                     <p className="text-gray-400">{item.text}</p>
