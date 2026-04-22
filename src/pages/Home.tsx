@@ -106,7 +106,6 @@ export default function Home() {
                         </div>
 
                         <div className="grid md:grid-cols-3 gap-8">
-
                             {[
                                 {
                                     title: "Személyes figyelem",
@@ -123,11 +122,19 @@ export default function Home() {
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
-                                    initial={{ opacity: 0, y: 30 }}
+                                    initial={{ opacity: 0, y: 20 }} // 👉 kisebb mozgás
                                     whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                                    viewport={{ once: true }}
-                                    className="bg-black/30 border border-white/10 p-8 rounded-2xl md:hover:border-accent transition"
+                                    transition={{
+                                        duration: 0.4,
+                                        delay: i * 0.08, // 👉 kisebb delay
+                                        ease: "easeOut"
+                                    }}
+                                    viewport={{ once: true, margin: "-50px" }} // 👉 előbb triggerel
+                                    className="bg-black/30 border border-white/10 p-8 rounded-2xl md:hover:border-accent transition transform-gpu will-change-transform"
+                                    style={{
+                                        backfaceVisibility: "hidden", // 👉 iOS fix
+                                        WebkitFontSmoothing: "antialiased"
+                                    }}
                                 >
                                     <h3 className="text-xl font-medium mb-3">{item.title}</h3>
                                     <p className="text-gray-400">{item.text}</p>
